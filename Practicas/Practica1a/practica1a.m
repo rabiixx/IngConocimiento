@@ -12,6 +12,15 @@ mu2_x = [1 1 0.7 0.5 0.2 0 0 0 0 0];
 plot(X, mu2_x, 'ob');
 
 legend('Conjunto 1','Conjunto 2'); 
+
+AND = t-normas:
+	- producto, min
+OR = t-conormas
+	- max
+NO = complemetario
+	- 1 - x
+(x, mu(x)) = Grado de pertencia de x sobre una funcion
+
 %}
 
 X = 1:7;
