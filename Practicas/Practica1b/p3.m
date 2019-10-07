@@ -14,5 +14,6 @@ plot(dist, lejos, '--g');
 
 
 g_nom = (1 - (trapmf(4.5, [0 0 4 5])^2));
-g_lejos = trapmf(10.7, [0 0 4 5])
-res = sumaProbabilista(g_nom. g_lejos);
+g_lejos = trapmf(10.7, [0 0 4 5]);
+
+sumprob = ((x+y)-x.*y);
