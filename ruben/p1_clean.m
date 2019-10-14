@@ -1,7 +1,9 @@
 %{
-    [~] Title: Practica 1c-Controlador Difuso Calefaccion
-    [+] Autor
-
+    [~] Title: Practica 1c - Controlador Difuso Calefaccion
+    [~] Autor: Ruben Cherif Narvaez
+    [~] Github: https://github.com/rabiixx
+    [~] Fecha: 14/10/2019  
+    [~] Tested on: MATLAB R2019a
 %}
 
 %% Paso 1: A Variables de entrada (estado)
