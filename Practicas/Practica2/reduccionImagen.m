@@ -10,7 +10,8 @@ function [A, B] = reduccionImagen(imgName, alfa, umbral, maxIte, nFil, nCol_)
     R = double(imread('imgName'));
     R = R / 255;
     
-    % No es recomendable utilizar la funciones rand() 
+    % No es recomendable utilizar la funciones rand() debido a que de
+    % aleatoriedad tiene lo k yo te diga, pero para eso nos vale
     A = rand([16 256]);
     B = rand([16 256]);
 
