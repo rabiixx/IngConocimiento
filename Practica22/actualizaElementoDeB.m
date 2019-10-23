@@ -1,20 +1,26 @@
-function[newMatrix] = actualizaElementoDeB(A, B, R, alfa, r, t)
+function[newValue] = actualizaElementoDeB(A, B, R, ALFA, r, t)
 
-    [C, Fil] = size(B);
-    new_B = zeros(C, Col);
+    [C, nFil] = size(A);
 
-    sum1 = 0;
-    tempR = 0;
-    for x = 1:Fil
-        for i = 1:C
-            tempR = max( min( A(i, x), B(i, t) ) );    
-        end 
-        sum1 = sum1 + (R(x, t) - tempSum);
-        sum1 = sum1 * ( min( A(r, x), B(r, t)) >= tempR ) * (B(r, t) <= A(r, x) );
-    end
-
-    new_B(r, t) = B(r, t) + 2*alfa * sum1;
-
-    newMatrix = new_B;
+    suma = 0;
     
-end
+    temp1 = [];
+
+    for y = 1:nFil
+        Q =  R(x, t) - max (min( A(:, x), B(:, t) ) );
+        
+        for i = 1:C
+            if i ~= r
+                temp1(i) = min( A(i, x), B(i, t) ) ;
+            end
+        end 
+        
+        maxMin = max(temp1);
+        
+        cond1 = min( A(r, x), B(r, t) ) >= maxMin;
+        cond2 = B(r, t) <= A(r, x);
+        suma = suma + Q  * cond1 * cond2;
+    end     
+
+    newValue = B(r, t) + 2 * ALFA * suma;
+end 

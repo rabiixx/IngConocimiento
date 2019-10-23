@@ -5,16 +5,16 @@ siguiente documento:
     https://www.ee.columbia.edu/~marios/matlab/MatlabStyle1p5.pdf
 %}
 
-function [devA, devB] = reduccionImagen(imgName, alfa, umbral, maxIte)
+function [devA, devB] = reduccionImagen(IMG_NAME, ALFA, UMBRAL, MAX_ITER, NUM_FIL_C)
 
     R = double(imread('imgName'));
     R = R / 255;
     
     [nFil, nCol] = size(R);
-    newR = zeros(nFil, nCol);
     
-    auxA = zeros(C, nFil);
-    auxB = zeros(C, Col);
+    newR = zeros(nFil, nCol);
+    auxA = zeros(NUM_FIL_C, nFil);
+    auxB = zeros(NUM_FIL_C, nCol);
     
     % No es recomendable utilizar la funciones rand() debido a que de
     % aleatoriedad tiene lo k yo te diga, pero para esto nos vale
