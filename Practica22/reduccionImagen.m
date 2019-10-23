@@ -21,13 +21,23 @@ function [devA, devB] = reduccionImagen(IMG_NAME, ALFA, UMBRAL, MAX_ITER, NUM_FI
     A = rand([16 256]);
     B = rand([16 256]);
 
-    newR = calculoError(A, B, R);
+    iniError = ; 
+    finError = 0;
     
-    for t = 1:
-        for
-        actualizaElementoDeA(A, B, R, alfa, r, t);
+    while ((iniError + finError) > UMBRAL) 
     
+        iniError = calculoError(A, B, R);
+
+        for r = 1:nFil
+            for t = 1:nCol
+                auxA(r, t) = actualizaElementoDeA(A, B, R, ALFA, r, t);
+                auxB(r, t) = actualizaElementoDeB(A, B, R, ALFA, r, t);
+            end
+        end
+
+        finError = calculoError(A, B, R);
     
+    end
     
     [devA, devB] = [auxA, auxB];
     
