@@ -6,7 +6,7 @@ function[newValue] = actualizaElementoDeB(A, B, R, ALFA, r, t)
     
     temp1 = [];
 
-    for y = 1:nFil
+    for x = 1:nFil
         Q =  R(x, t) - max (min( A(:, x), B(:, t) ) );
         
         for i = 1:C

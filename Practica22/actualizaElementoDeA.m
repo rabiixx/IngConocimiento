@@ -4,7 +4,7 @@ function[newValue] = actualizaElementoDeA(A, B, R, ALFA, r, t)
     
     [C, nCol] = size(B);
     
-    temp = [];
+    temp1 = [];
     
     for y = 1:nCol
         Q =  R(t, y) - max (min( A(:, t), B(:, y) ) );
