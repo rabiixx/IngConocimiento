@@ -10,7 +10,7 @@ function [devA, devB] = reduccionImagen(IMG_NAME, ALFA, UMBRAL, MAX_ITER, NUM_FI
     R = double(imread('circles.png'));
     R = R / 255;
     
-    disp(R);
+    imshow(R);
     
     [nFil, nCol] = size(R);
     
@@ -21,11 +21,13 @@ function [devA, devB] = reduccionImagen(IMG_NAME, ALFA, UMBRAL, MAX_ITER, NUM_FI
     % aleatoriedad tiene lo k yo te diga, pero para esto nos vale
     A = rand([NUM_FIL_C nFil]);
     B = rand([NUM_FIL_C nCol]);
+    
+    fprintf("Error Inicial: %f", calculoError(A, B, R));
 
     iterActual = 1;
     diffError = UMBRAL + 1;
     
-    while ( (diffError > UMBRAL) || (iterActual < MAX_ITER) )
+    while ( (diffError > UMBRAL) && (iterActual < MAX_ITER) )
     
         for r = 1 : NUM_FIL_C
             for t = 1 : nCol
@@ -35,7 +37,7 @@ function [devA, devB] = reduccionImagen(IMG_NAME, ALFA, UMBRAL, MAX_ITER, NUM_FI
         end
         
         diffError = calculoError(A, B, R) - calculoError(auxA, auxB, R);
-        
+        fprintf("Error: %f\n", diffError);
         A = auxA;
         B = auxB;
         

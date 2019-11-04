@@ -29,5 +29,4 @@ for i = 1 : nFil
     end
 end
 
-newR = newR * 255;
 imshow(newR);

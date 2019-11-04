@@ -7,7 +7,7 @@ function[newValue] = actualizaElementoDeB(A, B, R, ALFA, r, t)
     temp1 = [];
 
     for x = 1:nFil
-        Q =  R(x, t) - max (min( A(:, x), B(:, t) ) );
+        Q =  R(x, t) - max( min( A(:, x), B(:, t) ) );
         
         for i = 1:C
             if i ~= r
@@ -19,8 +19,8 @@ function[newValue] = actualizaElementoDeB(A, B, R, ALFA, r, t)
         
         cond1 = min( A(r, x), B(r, t) ) >= maxMin;
         cond2 = B(r, t) <= A(r, x);
-        suma = suma + Q  * cond1 * cond2;
+        suma = suma + (Q  * cond1 * cond2);
     end     
 
-    newValue = B(r, t) + 2 * ALFA * suma;
+    newValue = B(r, t) + (2 * ALFA * suma);
 end 

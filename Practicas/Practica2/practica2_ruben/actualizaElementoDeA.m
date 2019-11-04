@@ -6,8 +6,8 @@ function[newValue] = actualizaElementoDeA(A, B, R, ALFA, r, t)
     
     temp1 = [];
     
-    for y = 1:nCol
-        Q =  R(t, y) - max (min( A(:, t), B(:, y) ) );
+    for y = 1 : nCol
+        Q =  R(t, y) - max( min( A(:, t), B(:, y) ) );
         
         for i = 1:C
             if i ~= r
@@ -19,7 +19,7 @@ function[newValue] = actualizaElementoDeA(A, B, R, ALFA, r, t)
         
         cond1 = min( A(r, t), B(r, y) ) >= maxMin;
         cond2 = A(r, t) <= B(r, y);
-        sumaParcial = sumaParcial + Q  * cond1 * cond2;
+        sumaParcial = sumaParcial + (Q  * cond1 * cond2);
     end     
 
     newValue = A(r, t) + 2 * ALFA * sumaParcial;
