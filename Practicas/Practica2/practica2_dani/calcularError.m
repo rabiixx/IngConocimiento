@@ -10,7 +10,7 @@ function [error]=calcularError(A,B,R)
             R2(i,j)=maximo;
         end
     end
-   %imshow(R2);
+   imshow(R2);
    error = sum( sum( (R - R2).^2 ) );
 
 
