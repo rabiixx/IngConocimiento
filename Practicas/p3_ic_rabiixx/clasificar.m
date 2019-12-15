@@ -21,9 +21,9 @@ function [tasaAciertos] = clasificar(nuevaBase, media, prototipos)
 
         if (i == indexMin)
             numAciertos = numAciertos + 1;
-        % else
-        %    fprintf("Prediccion: %d\n", indexMin);
-        %    fprintf("Real: %d\n", i);
+         else
+            fprintf("Prediccion: %d\n", indexMin);
+            fprintf("Real: %d\n", i);
         end
     end 
     

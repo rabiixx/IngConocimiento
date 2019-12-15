@@ -1,7 +1,0 @@
-Tasa De Acierto: 0.909091
-
-Dataset: Miercoles_Josean_procesado
-
-Pareja Confundida:
-
-	Imagen Real: 2 - Alvaro --> Imagen Predicha: 5 - Xabi
